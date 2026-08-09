@@ -1,0 +1,512 @@
+/* Black + Gold theme — matches the MyBagh brand (see ARafay97/mybaghweb). */
+
+:root {
+  --bg: #070707;
+  --bg2: #0e0e0e;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.72);
+  --muted2: rgba(255, 255, 255, 0.55);
+  --gold: #d4af37;
+  --gold-soft: rgba(212, 175, 55, 0.18);
+  --border: rgba(212, 175, 55, 0.18);
+  --card: rgba(255, 255, 255, 0.03);
+  --card-hover: rgba(255, 255, 255, 0.06);
+  --danger: #e2555f;
+  --danger-soft: rgba(226, 85, 95, 0.15);
+  --success: #3ecf8e;
+  --success-soft: rgba(62, 207, 142, 0.15);
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --max: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 8px;
+}
+
+/* ====================================================
+   HEADER / NAV
+==================================================== */
+.pos-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(7, 7, 7, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.pos-header__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.brand {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  margin-right: 8px;
+}
+.pos-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.pos-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  transition: color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.pos-nav a:hover {
+  color: var(--gold);
+  background: var(--gold-soft);
+}
+.pos-nav a.is-active {
+  color: #0b0b0b;
+  background: var(--gold);
+  font-weight: 600;
+}
+.pos-main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+/* ====================================================
+   PAGE / TEXT
+==================================================== */
+.page-title {
+  font-size: clamp(20px, 3vw, 28px);
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.page-subtitle {
+  color: var(--muted2);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.error-text {
+  color: var(--danger);
+  background: var(--danger-soft);
+  border: 1px solid rgba(226, 85, 95, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.empty-state {
+  color: var(--muted2);
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+/* ====================================================
+   BUTTONS
+==================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease),
+    border-color 0.2s var(--ease), transform 0.12s var(--ease), opacity 0.2s var(--ease);
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+.btn-gold {
+  color: #0b0b0b;
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.btn-gold:hover:not(:disabled) {
+  filter: brightness(1.08);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+.btn-outline {
+  color: var(--gold);
+  border-color: rgba(212, 175, 55, 0.5);
+  background: rgba(212, 175, 55, 0.04);
+}
+.btn-outline:hover:not(:disabled) {
+  background: var(--gold-soft);
+  border-color: var(--gold);
+}
+.btn-success {
+  color: #06281a;
+  background: var(--success);
+  border-color: var(--success);
+}
+.btn-success:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.btn-danger {
+  color: var(--danger);
+  background: var(--danger-soft);
+  border-color: rgba(226, 85, 95, 0.4);
+}
+.btn-danger:hover:not(:disabled) {
+  background: rgba(226, 85, 95, 0.28);
+}
+.btn-block {
+  width: 100%;
+}
+.btn-sm {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+.btn-icon {
+  height: 26px;
+  width: 26px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* ====================================================
+   CARDS / TICKETS
+==================================================== */
+.card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.ticket {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.ticket:hover {
+  background: var(--card-hover);
+}
+.ticket__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.ticket__badge {
+  display: inline-flex;
+  align-items: center;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.ticket-section__title {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+.ticket-section__item {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+.ticket__total {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.status-btn {
+  width: 100%;
+  margin-top: 10px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.status-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.status-btn.is-done {
+  background: var(--success-soft);
+  border-color: rgba(62, 207, 142, 0.5);
+  color: var(--success);
+}
+
+/* ====================================================
+   EMPLOYEE — TABLE GRID
+==================================================== */
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.table-tile {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 14px 6px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.table-tile:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+}
+.table-tile.is-selected {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #0b0b0b;
+}
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+.checkbox-row input {
+  accent-color: var(--gold);
+  width: 16px;
+  height: 16px;
+}
+
+/* ====================================================
+   EMPLOYEE — MENU GRID
+==================================================== */
+.section-block {
+  margin-top: 26px;
+}
+.menu-section-title {
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+}
+.menu-tile {
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 11px 12px;
+  background: var(--card);
+  cursor: pointer;
+  min-height: 64px;
+  width: 100%;
+  transition: transform 0.12s var(--ease), border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.menu-tile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 175, 55, 0.45);
+  background: var(--card-hover);
+}
+.menu-tile__name {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 13.5px;
+}
+.menu-tile__price {
+  color: var(--gold);
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ====================================================
+   EMPLOYEE — CART
+==================================================== */
+.cart {
+  margin-top: 14px;
+}
+.cart-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.cart-line__qty {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+}
+.cart-line__name {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text);
+}
+.cart-line__price {
+  color: var(--muted2);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.cart-total {
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+/* ====================================================
+   RESPONSIVE
+==================================================== */
+@media (max-width: 900px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .ticket-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .table-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+  .page-title {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 18px;
+    margin: 12px 0 6px;
+  }
+  a {
+    font-size: 14px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Next.js port additions
+   --------------------------------------------------------------------------- */
+
+/* TableGrid tiles became real <button>s so they are keyboard reachable; these
+   two lines undo the parts of the UA button style the tile rules don't cover. */
+.table-tile {
+  font-family: inherit;
+  width: 100%;
+}
+
+/* Manual refresh control on every display screen. */
+.refresh-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.refresh-bar__meta {
+  color: var(--muted2);
+  font-size: 13px;
+}
+
+/* Time the order was taken, shown opposite the table/ticket badge. */
+.ticket__time {
+  color: var(--muted2);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
