@@ -24,6 +24,7 @@ export interface MenuSectionDef {
 // of each maintaining their own (previously inconsistent) copies.
 export const MENU_SECTIONS: MenuSectionDef[] = [
   { menuKey: "breakfast", label: "Breakfast", category: "breakfast", station: "kitchen", doneFlag: "startersDone" },
+  { menuKey: "parathas", label: "Parathas", category: "paratha", station: "kitchen", doneFlag: "startersDone" },
   { menuKey: "starters", label: "Starters", category: "starter", station: "kitchen", doneFlag: "startersDone" },
   { menuKey: "streetFood", label: "Street Food", category: "streetfood", station: "kitchen", doneFlag: "startersDone" },
   { menuKey: "mains", label: "Mains", category: "main", station: "kitchen", doneFlag: "mainsDone" },

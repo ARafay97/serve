@@ -130,6 +130,20 @@
     { "name": "Tikka Rice Platter (For 2)", "price": 21.99, "category": "starter" },
     { "name": "Bagh Platter (For 4)", "price": 69.99, "category": "starter" }
   ],
+  "parathas": [
+    { "name": "Lacha Paratha", "price": 2.49, "category": "paratha" },
+    { "name": "Aloo Paratha", "price": 2.99, "category": "paratha" },
+    { "name": "Keema Paratha", "price": 3.99, "category": "paratha" },
+    { "name": "Chicken Cheese Paratha", "price": 4.49, "category": "paratha" },
+    { "name": "Cheese Paratha", "price": 3.49, "category": "paratha" },
+    { "name": "Molie Paratha", "price": 3.99, "category": "paratha" },
+    { "name": "Saag Paratha", "price": 4.99, "category": "paratha" },
+    { "name": "Mix Veg Paratha", "price": 4.99, "category": "paratha" },
+    { "name": "Nutella Paratha", "price": 4.99, "category": "paratha" },
+    { "name": "Anda Paratha Roll", "price": 3.99, "category": "paratha" },
+    { "name": "Keema Paratha Roll", "price": 4.99, "category": "paratha" },
+    { "name": "Chicken Paratha Roll", "price": 4.99, "category": "paratha" }
+  ],
   "breakfast": [
     { "name": "Platter 1", "price": 6.99, "category": "breakfast" },
     { "name": "Platter 2", "price": 7.99, "category": "breakfast" },
